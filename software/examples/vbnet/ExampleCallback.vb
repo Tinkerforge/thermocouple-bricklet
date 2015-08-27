@@ -1,0 +1,32 @@
+Imports Tinkerforge
+
+Module ExampleCallback
+    Const HOST As String = "localhost"
+    Const PORT As Integer = 4223
+    Const UID As String = "XYZ" ' Change to your UID
+
+    ' Callback subroutine for temperature callback (parameter has unit °C/100)
+    Sub TemperatureCB(ByVal sender As BrickletThermocouple, ByVal temperature As Integer)
+        System.Console.WriteLine("Temperature: " + (temperature/100.0).ToString() + " °C")
+    End Sub
+
+    Sub Main()
+        Dim ipcon As New IPConnection() ' Create IP connection
+        Dim t As New BrickletThermocouple(UID, ipcon) ' Create device object
+
+        ipcon.Connect(HOST, PORT) ' Connect to brickd
+        ' Don't use device before ipcon is connected
+
+        ' Set period for temperature callback to 1s (1000ms)
+        ' Note: The temperature callback is only called every second
+        '       if the temperature has changed since the last call!
+        t.SetTemperatureCallbackPeriod(1000)
+
+        ' Register temperature callback to subroutine TemperatureCB
+        AddHandler t.Temperature, AddressOf TemperatureCB
+
+        System.Console.WriteLine("Press key to exit")
+        System.Console.ReadLine()
+        ipcon.Disconnect()
+    End Sub
+End Module
