@@ -29,7 +29,7 @@ $t->setDebouncePeriod(10000);
 $t->registerCallback(BrickletThermocouple::CALLBACK_TEMPERATURE_REACHED, 'cb_temperature_reached');
 
 // Configure threshold for temperature "greater than 30 °C" (unit is °C/100)
-$t->settemperatureCallbackThreshold('>', 30*100, 0);
+$t->setTemperatureCallbackThreshold('>', 30*100, 0);
 
 echo "Press ctrl+c to exit\n";
 $ipcon->dispatchCallbacks(-1); // Dispatch callbacks forever
