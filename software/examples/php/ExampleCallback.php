@@ -22,13 +22,13 @@ $t = new BrickletThermocouple(UID, $ipcon); // Create device object
 $ipcon->connect(HOST, PORT); // Connect to brickd
 // Don't use device before ipcon is connected
 
+// Register temperature callback to function cb_temperature
+$t->registerCallback(BrickletThermocouple::CALLBACK_TEMPERATURE, 'cb_temperature');
+
 // Set period for temperature callback to 1s (1000ms)
 // Note: The temperature callback is only called every second
 //       if the temperature has changed since the last call!
 $t->setTemperatureCallbackPeriod(1000);
-
-// Register temperature callback to function cb_temperature
-$t->registerCallback(BrickletThermocouple::CALLBACK_TEMPERATURE, 'cb_temperature');
 
 echo "Press ctrl+c to exit\n";
 $ipcon->dispatchCallbacks(-1); // Dispatch callbacks forever

@@ -1,3 +1,4 @@
+using System;
 using Tinkerforge;
 
 class Example
@@ -9,7 +10,7 @@ class Example
 	// Callback function for temperature reached callback (parameter has unit °C/100)
 	static void TemperatureReachedCB(BrickletThermocouple sender, int temperature)
 	{
-		System.Console.WriteLine("Temperature: " + temperature/100.0 + " °C");
+		Console.WriteLine("Temperature: " + temperature/100.0 + " °C");
 	}
 
 	static void Main()
@@ -29,8 +30,8 @@ class Example
 		// Configure threshold for temperature "greater than 30 °C" (unit is °C/100)
 		t.SetTemperatureCallbackThreshold('>', 30*100, 0);
 
-		System.Console.WriteLine("Press enter to exit");
-		System.Console.ReadLine();
+		Console.WriteLine("Press enter to exit");
+		Console.ReadLine();
 		ipcon.Disconnect();
 	}
 }

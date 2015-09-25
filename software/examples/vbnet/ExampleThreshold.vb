@@ -1,3 +1,4 @@
+Imports System
 Imports Tinkerforge
 
 Module ExampleThreshold
@@ -7,7 +8,7 @@ Module ExampleThreshold
 
     ' Callback subroutine for temperature reached callback (parameter has unit °C/100)
     Sub TemperatureReachedCB(ByVal sender As BrickletThermocouple, ByVal temperature As Integer)
-        System.Console.WriteLine("Temperature: " + (temperature/100.0).ToString() + " °C")
+        Console.WriteLine("Temperature: " + (temperature/100.0).ToString() + " °C")
     End Sub
 
     Sub Main()
@@ -26,8 +27,8 @@ Module ExampleThreshold
         ' Configure threshold for temperature "greater than 30 °C" (unit is °C/100)
         t.SetTemperatureCallbackThreshold(">"C, 30*100, 0)
 
-        System.Console.WriteLine("Press key to exit")
-        System.Console.ReadLine()
+        Console.WriteLine("Press key to exit")
+        Console.ReadLine()
         ipcon.Disconnect()
     End Sub
 End Module

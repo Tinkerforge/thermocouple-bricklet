@@ -7,16 +7,16 @@ use constant HOST => 'localhost';
 use constant PORT => 4223;
 use constant UID => 'XYZ'; # Change to your UID
 
-my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
-my $t = Tinkerforge::BrickletThermocouple->new(&UID, $ipcon); # Create device object
-
-# Callback subroutine for temperature greater than 30 °C (parameter has unit °C/100)
+# Callback subroutine for temperature reached callback (parameter has unit °C/100)
 sub cb_temperature_reached
 {
     my ($temperature) = @_;
 
     print "Temperature: " . $temperature/100.0 . " °C\n";
 }
+
+my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
+my $t = Tinkerforge::BrickletThermocouple->new(&UID, $ipcon); # Create device object
 
 $ipcon->connect(&HOST, &PORT); # Connect to brickd
 # Don't use device before ipcon is connected
@@ -30,6 +30,6 @@ $t->register_callback($t->CALLBACK_TEMPERATURE_REACHED, 'cb_temperature_reached'
 # Configure threshold for temperature "greater than 30 °C" (unit is °C/100)
 $t->set_temperature_callback_threshold('>', 30*100, 0);
 
-print "Press any key to exit...\n";
+print "Press key to exit\n";
 <STDIN>;
 $ipcon->disconnect();

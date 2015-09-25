@@ -10,7 +10,7 @@ from tinkerforge.bricklet_thermocouple import BrickletThermocouple
 
 # Callback function for temperature reached callback (parameter has unit °C/100)
 def cb_temperature_reached(temperature):
-    print('Temperature: ' + str(temperature/100.0) + ' °C')
+    print("Temperature: " + str(temperature/100.0) + " °C")
 
 if __name__ == "__main__":
     ipcon = IPConnection() # Create IP connection
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     t.register_callback(t.CALLBACK_TEMPERATURE_REACHED, cb_temperature_reached)
 
     # Configure threshold for temperature "greater than 30 °C" (unit is °C/100)
-    t.set_temperature_callback_threshold('>', 30*100, 0)
+    t.set_temperature_callback_threshold(">", 30*100, 0)
 
-    raw_input('Press key to exit\n') # Use input() in Python 3
+    raw_input("Press key to exit\n") # Use input() in Python 3
     ipcon.disconnect()
