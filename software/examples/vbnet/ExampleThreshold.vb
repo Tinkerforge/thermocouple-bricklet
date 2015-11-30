@@ -7,7 +7,8 @@ Module ExampleThreshold
     Const UID As String = "XYZ" ' Change to your UID
 
     ' Callback subroutine for temperature reached callback (parameter has unit °C/100)
-    Sub TemperatureReachedCB(ByVal sender As BrickletThermocouple, ByVal temperature As Integer)
+    Sub TemperatureReachedCB(ByVal sender As BrickletThermocouple, _
+                             ByVal temperature As Integer)
         Console.WriteLine("Temperature: " + (temperature/100.0).ToString() + " °C")
     End Sub
 
