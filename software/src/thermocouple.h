@@ -92,6 +92,13 @@
 #define CONF1_AVGSEL_8 (3 << 4)
 #define CONF1_AVGSEL_16 (4 << 4)
 
+#define FAULT_MASK_OPEN    (1 << 0)
+#define FAULT_MASK_OV_UV   (1 << 1)
+#define FAULT_MASK_TC_LOW  (1 << 2)
+#define FAULT_MASK_TC_HIGH (1 << 3)
+#define FAULT_MASK_CJ_LOW  (1 << 4)
+#define FAULT_MASK_CJ_HIGH (1 << 5)
+
 #define FAULT_STATUS_OPEN_CIRCUIT (1 << 0)
 #define FAULT_STATUS_OVER_UNDER   (1 << 1)
 

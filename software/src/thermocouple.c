@@ -25,6 +25,7 @@
 #include "brickletlib/bricklet_simple.h"
 #include "bricklib/bricklet/bricklet_communication.h"
 #include "bricklib/utility/util_definitions.h"
+#include "bricklib/utility/init.h"
 #include "config.h"
 
 #define MAX31856_REG_READ  (0)
@@ -117,6 +118,10 @@ void constructor(void) {
 	BC->error_callback     = false;
 	BC->error_over_under   = false;
 	BC->error_open_circuit = false;
+
+	// 0 activates fault output to LED
+	uint8_t fault_mask = ~(FAULT_MASK_OPEN | FAULT_MASK_OV_UV);
+	max31856_write_register(REG_FAULT, &fault_mask, 1);
 }
 
 void apply_configuration(void) {
