@@ -248,8 +248,12 @@ void get_configuration(const ComType com, const GetConfiguration *data) {
 }
 
 void set_configuration(const ComType com, const SetConfiguration *data) {
-	if((data->averaging         > API_AVERAGING_16)    ||
-	   (data->thermocouple_type > API_TYPE_G32)        ||
+	if((data->averaging != API_AVERAGING_1 ||
+		data->averaging != API_AVERAGING_2 ||
+		data->averaging != API_AVERAGING_4 ||
+		data->averaging != API_AVERAGING_8 ||
+		data->averaging != API_AVERAGING_16)    ||
+	   (data->thermocouple_type > API_TYPE_G32) ||
 	   (data->filter_option     > API_FILTER_OPTION_60HZ)) {
 		BA->com_return_error(data, sizeof(MessageHeader), MESSAGE_ERROR_CODE_INVALID_PARAMETER, com);
 	}
