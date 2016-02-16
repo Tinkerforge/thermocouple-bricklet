@@ -221,7 +221,7 @@ int32_t get_temperature(const int32_t value) {
 			temperature = (data[2] | (data[1] << 8) | (data[0] << 16)) >> 5;
 
 			// transfer sign of 19 bit temperature value to 32 bit variable
-			if(temperature & 0x4000) {
+			if(temperature & 0x40000) {
 				temperature |= 0xFFFC0000;
 			}
 
