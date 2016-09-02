@@ -10,7 +10,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -274,7 +273,7 @@ L AKL_5_2 J101
 U 1 1 55BA042C
 P 9150 4100
 F 0 "J101" H 9150 3950 60  0000 C CNN
-F 1 "AKL_5_2" H 9150 4250 60  0000 C CNN
+F 1 "THERM" H 9150 4250 60  0000 C CNN
 F 2 "kicad-libraries:AKL_5_2" H 9150 4100 60  0001 C CNN
 F 3 "" H 9150 4100 60  0000 C CNN
 	1    9150 4100

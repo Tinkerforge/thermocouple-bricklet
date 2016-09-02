@@ -1,9 +1,9 @@
-(kicad_pcb (version 4) (host pcbnew "(2015-03-18 BZR 5525)-product")
+(kicad_pcb (version 4) (host pcbnew 4.0.2+e4-6225~38~ubuntu15.10.1-stable)
 
   (general
     (links 42)
     (no_connects 0)
-    (area 149.934499 124.734499 190.315501 155.115501)
+    (area 149.219339 124.019339 282.371482 165.089523)
     (thickness 1.6002)
     (drawings 12)
     (tracks 219)
@@ -6329,13 +6329,13 @@
       (clearance 0.65024))
   )
 
-  (module kicad-libraries:PCC_SMP (layer Vorderseite) (tedit 55CCC5EE) (tstamp 55BA4B7C)
+  (module kicad-libraries:PCC_SMP (layer Vorderseite) (tedit 57C97C8C) (tstamp 55BA4B7C)
     (at 178.525 139.925 270)
     (path /55BA042C)
     (fp_text reference J101 (at 0 0.5 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value AKL_5_2 (at 0 -0.5 270) (layer F.Fab)
+    (fp_text value THERM (at 0 -0.5 270) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text user + (at -4.4 7 270) (layer F.SilkS)
