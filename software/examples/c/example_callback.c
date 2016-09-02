@@ -5,7 +5,7 @@
 
 #define HOST "localhost"
 #define PORT 4223
-#define UID "XYZ" // Change to your UID
+#define UID "XYZ" // Change XYZ to the UID of your Thermocouple Bricklet
 
 // Callback function for temperature callback (parameter has unit °C/100)
 void cb_temperature(int32_t temperature, void *user_data) {
@@ -43,6 +43,7 @@ int main(void) {
 
 	printf("Press key to exit\n");
 	getchar();
+	thermocouple_destroy(&t);
 	ipcon_destroy(&ipcon); // Calls ipcon_disconnect internally
 	return 0;
 }

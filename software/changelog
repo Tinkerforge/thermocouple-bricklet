@@ -1,2 +1,5 @@
-<unknown>: 2.0.0 (<unknown>)
+2016-01-07: 2.0.0 (c5fff16)
 - Initial version
+
+2016-02-16: 2.0.1 (12b57ea)
+- Fix signed 19 to signed 32 bit conversion

@@ -25,6 +25,7 @@
 #include "brickletlib/bricklet_simple.h"
 #include "bricklib/bricklet/bricklet_communication.h"
 #include "bricklib/utility/util_definitions.h"
+#include "bricklib/utility/init.h"
 #include "config.h"
 
 #define MAX31856_REG_READ  (0)
@@ -117,6 +118,10 @@ void constructor(void) {
 	BC->error_callback     = false;
 	BC->error_over_under   = false;
 	BC->error_open_circuit = false;
+
+	// 0 activates fault output to LED
+	uint8_t fault_mask = ~(FAULT_MASK_OPEN | FAULT_MASK_OV_UV);
+	max31856_write_register(REG_FAULT, &fault_mask, 1);
 }
 
 void apply_configuration(void) {
@@ -216,7 +221,7 @@ int32_t get_temperature(const int32_t value) {
 			temperature = (data[2] | (data[1] << 8) | (data[0] << 16)) >> 5;
 
 			// transfer sign of 19 bit temperature value to 32 bit variable
-			if(temperature & 0x4000) {
+			if(temperature & 0x40000) {
 				temperature |= 0xFFFC0000;
 			}
 
@@ -243,8 +248,12 @@ void get_configuration(const ComType com, const GetConfiguration *data) {
 }
 
 void set_configuration(const ComType com, const SetConfiguration *data) {
-	if((data->averaging         > API_AVERAGING_16)    ||
-	   (data->thermocouple_type > API_TYPE_G32)        ||
+	if((data->averaging != API_AVERAGING_1 ||
+		data->averaging != API_AVERAGING_2 ||
+		data->averaging != API_AVERAGING_4 ||
+		data->averaging != API_AVERAGING_8 ||
+		data->averaging != API_AVERAGING_16)    ||
+	   (data->thermocouple_type > API_TYPE_G32) ||
 	   (data->filter_option     > API_FILTER_OPTION_60HZ)) {
 		BA->com_return_error(data, sizeof(MessageHeader), MESSAGE_ERROR_CODE_INVALID_PARAMETER, com);
 	}
