@@ -6329,7 +6329,7 @@
       (clearance 0.65024))
   )
 
-  (module kicad-libraries:PCC_SMP (layer Vorderseite) (tedit 57C97C8C) (tstamp 55BA4B7C)
+  (module kicad-libraries:PCC_SMP (layer Vorderseite) (tedit 581C4777) (tstamp 55BA4B7C)
     (at 178.525 139.925 270)
     (path /55BA042C)
     (fp_text reference J101 (at 0 0.5 270) (layer F.SilkS)
@@ -6357,8 +6357,8 @@
       (net 20 "Net-(J101-Pad1)"))
     (pad 2 thru_hole circle (at 6.8 6.75 270) (size 3.2 3.2) (drill 1.77) (layers *.Cu *.Mask F.SilkS)
       (net 7 "Net-(J101-Pad2)"))
-    (pad "" np_thru_hole circle (at 7.9 -6.75 270) (size 3.2 3.2) (drill 1.77) (layers *.Cu *.Mask F.SilkS))
-    (pad "" np_thru_hole circle (at -7.9 -6.75 270) (size 3.2 3.2) (drill 1.77) (layers *.Cu *.Mask F.SilkS))
+    (pad "" thru_hole circle (at 7.9 -6.75 270) (size 3.2 3.2) (drill 1.77) (layers *.Cu *.Mask F.SilkS))
+    (pad "" thru_hole circle (at -7.9 -6.75 270) (size 3.2 3.2) (drill 1.77) (layers *.Cu *.Mask F.SilkS))
   )
 
   (gr_line (start 187.625 154.925) (end 152.625 154.925) (angle 90) (layer Edge.Cuts) (width 0.381))
