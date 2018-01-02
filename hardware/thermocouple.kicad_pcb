@@ -1,9 +1,9 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.2+e4-6225~38~ubuntu15.10.1-stable)
+(kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu17.04.1)
 
   (general
     (links 42)
     (no_connects 0)
-    (area 149.219339 124.019339 282.371482 165.089523)
+    (area 149.219339 124.019339 282.27147 165.489573)
     (thickness 1.6002)
     (drawings 12)
     (tracks 219)
@@ -231,14 +231,14 @@
       (net 1 GND))
   )
 
-  (module kicad-libraries:0603 (layer Vorderseite) (tedit 53F7061D) (tstamp 55BA4B56)
+  (module kicad-libraries:0603 (layer Vorderseite) (tedit 5A4B447F) (tstamp 55BA4B56)
     (at 166.025 139.925 270)
     (path /55BA1903)
     (attr smd)
     (fp_text reference C105 (at 0.05 0.225 270) (layer F.SilkS)
       (effects (font (size 0.2 0.2) (thickness 0.05)))
     )
-    (fp_text value 10nF (at 0.05 -0.375 270) (layer F.SilkS)
+    (fp_text value 100nF (at 0.05 -0.375 270) (layer F.SilkS)
       (effects (font (size 0.2 0.2) (thickness 0.05)))
     )
     (fp_line (start -1.45034 -0.65024) (end 1.45034 -0.65024) (layer F.SilkS) (width 0.001))

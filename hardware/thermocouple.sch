@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:tinkerforge
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -28,7 +29,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:tinkerforge
 LIBS:thermocouple-cache
 EELAYER 25 0
 EELAYER END
@@ -339,7 +339,7 @@ L C C105
 U 1 1 55BA1903
 P 8200 4250
 F 0 "C105" V 8350 4250 50  0000 L CNN
-F 1 "10nF" V 8350 4000 50  0000 L CNN
+F 1 "100nF" V 8350 4000 50  0000 L CNN
 F 2 "kicad-libraries:0603" H 8200 4250 60  0001 C CNN
 F 3 "" H 8200 4250 60  0001 C CNN
 	1    8200 4250
