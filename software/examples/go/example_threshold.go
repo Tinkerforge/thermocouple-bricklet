@@ -22,7 +22,7 @@ func main() {
 	t.SetDebouncePeriod(10000)
 
 	t.RegisterTemperatureReachedCallback(func(temperature int32) {
-		fmt.Printf("Temperature: %d °C\n", float64(temperature)/100.0)
+		fmt.Printf("Temperature: %f °C\n", float64(temperature)/100.0)
 	})
 
 	// Configure threshold for temperature "greater than 30 °C".
