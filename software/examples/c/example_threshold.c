@@ -36,7 +36,7 @@ int main(void) {
 	// Register temperature reached callback to function cb_temperature_reached
 	thermocouple_register_callback(&t,
 	                               THERMOCOUPLE_CALLBACK_TEMPERATURE_REACHED,
-	                               (void *)cb_temperature_reached,
+	                               (void (*)(void))cb_temperature_reached,
 	                               NULL);
 
 	// Configure threshold for temperature "greater than 30 °C"
